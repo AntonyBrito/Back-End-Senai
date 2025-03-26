@@ -11,7 +11,7 @@ public class Professor {
     private String nome;
     private String cpf;
 
-    @OneToOne(mappedBy = "professor")
+    @OneToOne(mappedBy = "professor", cascade = CascadeType.ALL)
     private Curso curso;
 
     public Professor() {

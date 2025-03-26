@@ -49,4 +49,12 @@ public class Aluno {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
+
+    public Curso getCurso() {
+        return curso;
+    }
+
+    public void setCurso(Curso curso) {
+        this.curso = curso;
+    }
 }
