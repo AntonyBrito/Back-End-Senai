@@ -20,8 +20,8 @@ public class ProfessorController {
     private ProfessorService professorService;
 
     @PostMapping
-    public ResponseEntity<Professor> created(@RequestBody ProfessorDTO professorDTO){
-        Professor professorBd = professorService.save(professorDTO);
-        return ResponseEntity.status(HttpStatus.CREATED).body(professorBd);
+    public ResponseEntity<ProfessorDTO> created(@RequestBody ProfessorDTO professorDTO){
+        ProfessorDTO professor = professorService.save(professorDTO);
+        return ResponseEntity.status(HttpStatus.CREATED).body(professor);
     }
 }

@@ -19,9 +19,18 @@ public class ProfessorService {
         return professor;
     }
 
-    public Professor save(ProfessorDTO professorDTO){
+    public ProfessorDTO toDTO(Professor professor){
+        ProfessorDTO professorDTO = new ProfessorDTO();
+        professorDTO.setNome(professor.getNome());
+        professorDTO.setCpf(professor.getCpf());
+
+        return professorDTO;
+    }
+
+    public ProfessorDTO save(ProfessorDTO professorDTO){
         Professor professor = this.fromDTO(professorDTO);
         Professor professorBd = professorRepository.save(professor);
-        return professorBd;
+
+        return this.toDTO(professorBd);
     }
 }
