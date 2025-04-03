@@ -29,4 +29,13 @@ public class ProdutoController {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(produto);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id){
+        if(produtoService.delete(id)){
+            return ResponseEntity.noContent().build();
+        }else{
+            return ResponseEntity.notFound().build();
+        }
+    }
 }
