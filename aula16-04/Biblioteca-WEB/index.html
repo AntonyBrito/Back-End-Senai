@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biblioteca Virtual</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>📚 Biblioteca Virtual</h1>
+    <nav>
+      <button onclick="showSection('livros')">Livros</button>
+      <button onclick="showSection('clientes')">Clientes</button>
+      <button onclick="showSection('emprestimos')">Empréstimos</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- LIVROS -->
+    <section id="livros" class="section">
+      <h2>📖 Gerenciar Livros</h2>
+      <form id="livroForm" class="form">
+        <input type="text" name="nome" placeholder="Nome do Livro" required />
+        <input type="text" name="autor" placeholder="Autor" required />
+        <input type="text" name="isbn" placeholder="ISBN" required />
+        <input type="text" name="genero" placeholder="Gênero" required />
+        <button type="submit">Salvar Livro</button>
+      </form>
+      <div id="livroList" class="card-container"></div>
+    </section>
+
+    <!-- CLIENTES -->
+    <section id="clientes" class="section hidden">
+      <h2>👤 Gerenciar Clientes</h2>
+      <form id="clienteForm" class="form">
+        <input type="text" name="nome" placeholder="Nome" required />
+        <input type="text" name="sobrenome" placeholder="Sobrenome" required />
+        <input type="text" name="cpf" placeholder="CPF" required />
+        <button type="submit">Salvar Cliente</button>
+      </form>
+      <div id="clienteList" class="card-container"></div>
+    </section>
+
+    <!-- EMPRÉSTIMOS -->
+    <section id="emprestimos" class="section hidden">
+      <h2>📆 Gerenciar Empréstimos</h2>
+      <form id="emprestimoForm" class="form">
+        <input type="date" name="dataInicial" required />
+        <input type="date" name="dataFinal" required />
+        <input type="text" name="cpfCliente" placeholder="CPF do Cliente" required />
+        <input type="text" name="isbnLivro" placeholder="ISBN dos Livros (separados por vírgula)" required />
+        <button type="submit">Salvar Empréstimo</button>
+      </form>
+      <div id="emprestimoList" class="card-container"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
